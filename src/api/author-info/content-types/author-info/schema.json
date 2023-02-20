@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "author_infos",
+  "info": {
+    "singularName": "author-info",
+    "pluralName": "author-infos",
+    "displayName": "AuthorInfo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "avatar_large": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "got_digg_count": {
+      "type": "integer"
+    },
+    "got_view_count": {
+      "type": "integer"
+    },
+    "article_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article-detail.article-detail",
+      "mappedBy": "author_info"
+    }
+  }
+}

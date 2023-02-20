@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_type_tabs",
+  "info": {
+    "singularName": "article-type-tab",
+    "pluralName": "article-type-tabs",
+    "displayName": "ArticleTypeTab",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "labels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::label.label",
+      "inversedBy": "article_type_tabs"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "article_type_tabs"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
